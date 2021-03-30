@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	
-	public static final String EMPRESA2 = "empresa";
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -29,7 +28,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		//chama o JSP
 		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
-		request.setAttribute(EMPRESA2, empresa.getNome());
+		request.setAttribute("empresa", empresa.getNome());
 		rd.forward(request, response);
 	}
 }
