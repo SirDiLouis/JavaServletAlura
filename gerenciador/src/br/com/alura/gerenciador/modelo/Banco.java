@@ -1,4 +1,4 @@
-package br.com.alura.gerenciador.servlet;
+package br.com.alura.gerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -47,5 +47,14 @@ public class Banco {
 		}
 	}
 }
+
+	public Empresa buscaEmpresaPelaId(Integer id) {
+		for (Empresa empresa : lista) {
+			if (empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+	}
 	
 }
